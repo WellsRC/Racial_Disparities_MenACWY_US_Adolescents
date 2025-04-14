@@ -129,7 +129,7 @@ if(strcmp(Var,'Race'))
 
     
     
-    U_Name={'White','Hispanic','Multi-racial+Other','African American'};
+    U_Name={'White','Hispanic','Other/Multiple Races','African American'};
 
     dx=[-0.27 -0.09 0.09 0.27];
 elseif(strcmp(Var,'Region'))
