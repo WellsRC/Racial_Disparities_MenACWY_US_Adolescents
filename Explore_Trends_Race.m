@@ -5,18 +5,22 @@ close all;
 % Colours for plotting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-C_Vac=[hex2rgb('#238b45');
-hex2rgb('#00441b');];
-x_vac=linspace(0,1,size(C_Vac,1)-1);
+C_Vac=[1 1 1;
+hex2rgb('#374e55');];
+
+C_Vac=interp1([0 1],C_Vac,linspace(0,1,3));
+C_Vac=C_Vac(2:end,:);
 
 
-C_Vac_2D=[hex2rgb('#2171b5');
-hex2rgb('#08306b');];
-x_vac_2D=linspace(0,1,size(C_Vac_2D,1)-1);
+C_Vac_2D=[1 1 1;
+hex2rgb('#79af97');];
+C_Vac_2D=interp1([0 1],C_Vac_2D,linspace(0,1,3));
+C_Vac_2D=C_Vac_2D(2:end,:);
 
-C_Drop=[hex2rgb('#cb181d');
-hex2rgb('#67000d');];
-
+C_Drop=[1 1 1;
+hex2rgb('#b24745');];
+C_Drop=interp1([0 1],C_Drop,linspace(0,1,3));
+C_Drop=C_Drop(2:end,:);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 % Load Data
@@ -29,7 +33,7 @@ Dropout_Race=Dropout_Race(:,reorder_array,:);
 Vaccinated_Race=Vaccinated_Race(:,reorder_array,:);
 Two_Dose_Race=Two_Dose_Race(:,reorder_array,:);
 
-Race={'NH White','Hispanic','NH Other + multiple races','NH African American'}';
+Race={'NH White','Hispanic','NH Other/Multiple Races','NH African American'}';
 
 Model={'No pivot';'Pivot 2017';'Pivot 2018';'Pivot 2019';'Pivot 2020';'Pivot 2021';'Pivot 2022'};
 

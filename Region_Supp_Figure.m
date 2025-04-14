@@ -2,10 +2,26 @@ clear;
 clc;
 close all;
 
+C_Vac=[1 1 1;
+hex2rgb('#374e55');];
+
+C_Vac=interp1([0 1],C_Vac,linspace(0,1,3));
+C_Vac=C_Vac(2:end,:);
+
+
+C_Vac_2D=[1 1 1;
+hex2rgb('#79af97');];
+C_Vac_2D=interp1([0 1],C_Vac_2D,linspace(0,1,3));
+C_Vac_2D=C_Vac_2D(2:end,:);
+
+C_Drop=[1 1 1;
+hex2rgb('#b24745');];
+C_Drop=interp1([0 1],C_Drop,linspace(0,1,3));
+C_Drop=C_Drop(2:end,:);
 
 load('NIS_Teen_Data_Sample.mat','Dropout_Region','Vaccinated_Region','U_Region','Two_Dose_Region','Yr');
-C=[hex2rgb('#41ae76'); hex2rgb('#2171b5');hex2rgb('#cb181d');];
-C_err=[hex2rgb('#00441b'); hex2rgb('#08306b');hex2rgb('#67000d');];
+C=[C_Vac(1,:); C_Vac_2D(1,:);C_Drop(1,:);];
+C_err=[C_Vac(2,:); C_Vac_2D(2,:);C_Drop(2,:);];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 % Summarize Dropout Data
